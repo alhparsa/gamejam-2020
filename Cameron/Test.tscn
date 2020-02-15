@@ -1,10 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
+
 
 [ext_resource path="res://Cameron/Test.gd" type="Script" id=1]
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Cameron/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Inventory/Inventory.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/items/Water Bottle.png" type="Texture" id=6]
+[ext_resource path="res://assets/items/Water Bottle.png" type="Texture" id=5]
+[ext_resource path="res://Camel.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 290.085, 79.0183, 0, 0, 0, 0, 319.813, 91.3852, 0, 0, 0, 0, 288.896, 105.655, 0, 0, 0, 0, 352.158, 132.529 )
+}
 
 [node name="Test" type="Node"]
 script = ExtResource( 1 )
@@ -21,8 +28,8 @@ tile_data = PoolIntArray( -458740, 2, 1, -458739, 2, 1, -458738, 2, 1, -458737, 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 344.239, 106.222 )
 z_index = 1
-start_i = 8
 speed = 60.0
+start_i = 8
 
 [node name="Inventory" parent="." instance=ExtResource( 4 )]
 
@@ -31,9 +38,21 @@ margin_left = 53.6619
 margin_top = 36.7547
 margin_right = 93.6619
 margin_bottom = 76.7547
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Camel"]
+[node name="wBottle" type="Sprite" parent="."]
+position = Vector2( 431.823, 105.606 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 290.085, 79.0183 )
+rotation = 0.394224
+
+[node name="Camel" parent="Path2D/PathFollow2D" instance=ExtResource( 6 )]

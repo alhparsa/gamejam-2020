@@ -1,4 +1,4 @@
-extends Object
+extends KinematicBody2D
 
 class_name CamelStats
 
@@ -13,6 +13,8 @@ signal on_thirst_change
 signal on_hunger_change
 signal on_armor_change
 signal on_speed_change
+
+var path
 
 func set_hp(val : float) -> void:
 	hp = val
@@ -55,3 +57,8 @@ func _init() -> void:
 	self.thirst = 100
 	self.hunger = 100
 	self.armor = 30
+	path = self.get_parent()
+	
+	
+func _process(delta):
+	pass
