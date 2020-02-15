@@ -14,7 +14,6 @@ func _ready():
 func _process(delta):
 	if $TileMap.world_to_map($Player.global_position) == Vector2(19,-8) && not pickedUpWater:
 		$Inventory.add_item("Water Bottle")
-		pickedUp = true
 		$wBottle.visible = false
 		#queue_free(wBottle)
 		pickedUpWater = true
