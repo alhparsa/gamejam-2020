@@ -17,11 +17,11 @@ var image: Texture
 func _init(itemName,type,weight,property,cost,craft_recipe,map_size,inventory): 
 	self.itemName=itemName
 	self.type=type
-	self.weight=weight
+	self.weight=float(weight)
 	self.property=property
-	self.cost=cost
+	self.cost=float(cost)
 	self.craft_recipe=craft_recipe
-	self.map_size=map_size
+	self.map_size=int(map_size)
 	self.inventory=inventory
 	self.image = load("res://assets/items/"+self.itemName+".png")
 	

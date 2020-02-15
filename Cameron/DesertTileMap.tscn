@@ -4,7 +4,7 @@
 
 [node name="DesertTileMap" type="TileMap"]
 position = Vector2( 3, 0 )
-scale = Vector2( 2, 1 )
+scale = Vector2( 1, 0.825 )
 mode = 1
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 16 )
