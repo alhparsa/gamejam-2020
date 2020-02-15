@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Object",
 "class": "CamelStats",
 "language": "GDScript",
-"path": "res://CamelStats.gd"
+"path": "res://Cameron/CamelStats.gd"
 } ]
 _global_script_class_icons={
 "CamelStats": ""
@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="SimranStyle"
-run/main_scene="res://Test.tscn"
+run/main_scene="res://Cameron/Test.tscn"
 config/icon="res://icon.png"
 
 [rendering]
