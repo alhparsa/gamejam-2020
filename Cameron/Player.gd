@@ -5,9 +5,9 @@ var gold : int
 var velocity : Vector2 = Vector2.ZERO
 var speed_bonus : int = 0
 
-export(float) var speed = 10
-export(int) var frame_i = 0
-export(int) var start_i = 0
+export(float) var speed : float = 10
+export(int) var frame_i : int = 0
+export(int) var start_i : int = 0
 
 func _process(delta):
 	velocity = Vector2.ZERO
