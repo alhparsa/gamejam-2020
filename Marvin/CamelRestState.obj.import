@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/CamelRestState.obj-43366a57ca38868afa17138bf1662e48.mesh"
+
+[deps]
+
+files=[ "res://.import/CamelRestState.obj-43366a57ca38868afa17138bf1662e48.mesh" ]
+
+source_file="res://Marvin/CamelRestState.obj"
+dest_files=[ "res://.import/CamelRestState.obj-43366a57ca38868afa17138bf1662e48.mesh", "res://.import/CamelRestState.obj-43366a57ca38868afa17138bf1662e48.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
