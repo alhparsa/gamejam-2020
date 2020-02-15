@@ -24,15 +24,6 @@ func _process(delta):
 	if Input.is_action_pressed("shift"):
 		speed_bonus = speed*10
 		$AnimationPlayer.playback_speed = 1.7
-	if Input.is_action_pressed("ui_left"):
-		velocity.x -=  stepify(sqrt(3), .01)
-	if Input.is_action_pressed("ui_right"):
-		velocity.x += stepify(sqrt(3), .01)
-	if Input.is_action_pressed("ui_up"):
-		velocity.y -= stepify(sqrt(3), .01)
-	if Input.is_action_pressed("ui_down"):
-		velocity.y += stepify(sqrt(3), .01)
-	velocity.x = int(velocity.x)
 	if velocity.x != 0:
 		$Sprite.flip_h = velocity.x < 0
 	if velocity.y == 0 and velocity.x != 0:
