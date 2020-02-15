@@ -1,7 +1,9 @@
 extends TextureRect
 
-var item
+var item : Item setget setItem, getItem
 
-func setItem(item):
-	self.item = item
-	texture = load("res://icon.png")
+func setItem(i):
+	item = i
+	texture = item.image
+func getItem():
+	return item
