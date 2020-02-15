@@ -9,7 +9,7 @@ var armor : float setget set_armor, get_armor
 var speed : float setget set_speed, get_speed
 
 signal on_hp_change
-signal on_thrist_change
+signal on_thirst_change
 signal on_hunger_change
 signal on_armor_change
 signal on_speed_change
@@ -23,7 +23,7 @@ func get_hp() -> float:
 	
 func set_thirst(val : float) -> void:
 	thirst = val
-	emit_signal("on_thrist_change")
+	emit_signal("on_thirst_change")
 	
 func get_thirst() -> float:
 	return thirst
@@ -47,7 +47,7 @@ func set_speed(val : float) -> void:
 	emit_signal("on_speed_change")
 
 func get_speed() -> float:
-	return speed	
+	return speed
 
 
 func _init() -> void:
