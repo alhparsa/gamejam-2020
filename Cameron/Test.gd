@@ -1,5 +1,6 @@
 extends Node
-var pickedUp = false
+var pickedUpWater = false
+var pickedUpDates = false
 
 var camel_stats : CamelStats
 var b = []
@@ -11,11 +12,16 @@ func _ready():
 	#$Waterbottle.set_global_position(Vector2(19,-8))
 	
 func _process(delta):
-	if $TileMap.world_to_map($Player.global_position) == Vector2(19,-8) && not pickedUp:
+	if $TileMap.world_to_map($Player.global_position) == Vector2(19,-8) && not pickedUpWater:
 		$Inventory.add_item("Water Bottle")
 		pickedUp = true
 		$wBottle.visible = false
 		#queue_free(wBottle)
+		pickedUpWater = true
+		
+	if $TileMap.world_to_map($Player.global_position) == Vector2(14,-4) && not pickedUpDates:
+		$Inventory.add_item("Dates")
+		pickedUpDates = true
 	
 
 func hi():
