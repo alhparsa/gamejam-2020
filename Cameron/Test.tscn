@@ -27,16 +27,6 @@ start_i = 8
 
 [node name="Inventory" parent="." instance=ExtResource( 4 )]
 
-[node name="Waterbottle" type="TextureRect" parent="."]
-margin_left = 53.6619
-margin_top = 36.7547
-margin_right = 93.6619
-margin_bottom = 76.7547
-texture = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="dateSprite" type="Sprite" parent="."]
 position = Vector2( 295, 85 )
 scale = Vector2( 0.25, 0.25 )
