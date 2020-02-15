@@ -4,10 +4,10 @@
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Cameron/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Inventory/Inventory.tscn" type="PackedScene" id=4]
-<<<<<<< HEAD
-=======
+
 [ext_resource path="res://assets/items/Water Bottle.png" type="Texture" id=6]
->>>>>>> 452f4dea1fac90e16d293de17368d4a74d2c9487
+
+[ext_resource path="res://assets/items/Water Bottle.png" type="Texture" id=6]
 
 [node name="Test" type="Node"]
 script = ExtResource( 1 )
@@ -27,8 +27,7 @@ z_index = 1
 start_i = 8
 
 [node name="Inventory" parent="." instance=ExtResource( 4 )]
-<<<<<<< HEAD
-=======
+
 
 [node name="Waterbottle" type="TextureRect" parent="."]
 margin_left = 53.6619
@@ -44,4 +43,3 @@ __meta__ = {
 position = Vector2( 431.823, 105.606 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
->>>>>>> 452f4dea1fac90e16d293de17368d4a74d2c9487
