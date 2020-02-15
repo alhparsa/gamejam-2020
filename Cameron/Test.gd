@@ -12,14 +12,16 @@ func _ready():
 	#$Waterbottle.set_global_position(Vector2(19,-8))
 	
 func _process(delta):
-	if $TileMap.world_to_map($Player.global_position) == Vector2(0,-2) && not pickedUpWater:
+	if $TileMap.world_to_map($Player.global_position) == Vector2(19,-8) && not pickedUpWater:
 		$Inventory.add_item("Water Bottle")
 		$wBottle.visible = false
 		#queue_free(wBottle)
 		pickedUpWater = true
 		
-	if $TileMap.world_to_map($Player.global_position) == Vector2(1,2) && not pickedUpDates:
+	if $TileMap.world_to_map($Player.global_position) == Vector2(14,-4) && not pickedUpDates:
+		print($Player.global_position)
 		$Inventory.add_item("Dates")
+		$dateSprite.visible = false
 		pickedUpDates = true
 	
 
