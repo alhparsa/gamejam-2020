@@ -1,4 +1,3 @@
-tool
 extends KinematicBody2D
 
 var holding_item
