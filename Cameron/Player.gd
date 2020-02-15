@@ -17,9 +17,9 @@ func _process(delta):
 		speed_bonus = speed*.7
 		$AnimationPlayer.playback_speed = 1.7
 	if Input.is_action_pressed("ui_left"):
-		velocity.x -= 1
+		velocity.x -= sqrt(3)
 	if Input.is_action_pressed("ui_right"):
-		velocity.x += 1
+		velocity.x += sqrt(3)
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
 	if Input.is_action_pressed("ui_down"):
@@ -37,6 +37,7 @@ func _process(delta):
 	elif velocity.y == 1 and velocity.x == 0:
 		$AnimationPlayer.play("walk_down")
 	else:
+		frame_i = 3
 		$AnimationPlayer.stop()
 	move_and_slide(velocity.normalized() * (speed + speed_bonus))
 	$Sprite.frame = frame_i* 9 + start_i

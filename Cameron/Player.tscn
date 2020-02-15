@@ -4,9 +4,9 @@
 [ext_resource path="res://Cameron/civilian.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 66.5647
+radius = 51.3741
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=7]
 resource_name = "walk_down"
 length = 0.7
 loop = true
@@ -61,10 +61,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 6 ]
+"values": [ 5 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=8]
 resource_name = "walk_side"
 length = 0.7
 loop = true
@@ -146,17 +146,18 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 1 ]
+"values": [ 2 ]
 }
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( -185.612, 61.1997 )
 script = ExtResource( 1 )
 speed = 50.0
-start_i = 6
+frame_i = 2
+start_i = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.64075, 6.37073 )
+position = Vector2( -0.258301, 8.58264 )
 scale = Vector2( 0.1, 0.1 )
 shape = SubResource( 1 )
 
@@ -164,15 +165,15 @@ shape = SubResource( 1 )
 texture = ExtResource( 2 )
 vframes = 8
 hframes = 9
-frame = 6
+frame = 35
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 0.35, 0.35 )
+zoom = Vector2( 0.4, 0.4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/walk_down = SubResource( 2 )
+anims/walk_down = SubResource( 7 )
 anims/walk_downdiag = SubResource( 3 )
-anims/walk_side = SubResource( 4 )
+anims/walk_side = SubResource( 8 )
 anims/walk_up = SubResource( 5 )
 anims/walk_updiag = SubResource( 6 )
