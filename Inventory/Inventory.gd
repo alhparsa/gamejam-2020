@@ -10,6 +10,7 @@ func _ready():
 	for i in 15:
 		$Control/GridContainer.add_child(inv_holder.instance())
 
+# warning-ignore:unused_argument
 func _process(delta):
 	if Input.is_action_just_pressed("tab"):
 		$Control.visible = true

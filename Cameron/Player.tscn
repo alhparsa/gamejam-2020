@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Cameron/Player.gd" type="Script" id=1]
 [ext_resource path="res://Cameron/civilian.png" type="Texture" id=2]
+[ext_resource path="res://Cameron/shadow.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 51.3741
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=2]
 resource_name = "walk_down"
 length = 0.7
 loop = true
@@ -64,7 +65,7 @@ tracks/1/keys = {
 "values": [ 5 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=4]
 resource_name = "walk_side"
 length = 0.7
 loop = true
@@ -157,9 +158,13 @@ frame_i = 2
 start_i = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.258301, 8.58264 )
+position = Vector2( -0.383667, 9.89874 )
 scale = Vector2( 0.1, 0.1 )
 shape = SubResource( 1 )
+
+[node name="Shadow" type="Sprite" parent="."]
+position = Vector2( -0.8, 2.9 )
+texture = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -172,8 +177,8 @@ current = true
 zoom = Vector2( 0.4, 0.4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/walk_down = SubResource( 7 )
+anims/walk_down = SubResource( 2 )
 anims/walk_downdiag = SubResource( 3 )
-anims/walk_side = SubResource( 8 )
+anims/walk_side = SubResource( 4 )
 anims/walk_up = SubResource( 5 )
 anims/walk_updiag = SubResource( 6 )
