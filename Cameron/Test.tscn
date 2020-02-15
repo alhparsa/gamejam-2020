@@ -28,7 +28,7 @@ start_i = 8
 [node name="Inventory" parent="." instance=ExtResource( 4 )]
 
 [node name="dateSprite" type="Sprite" parent="."]
-position = Vector2( 295, 85 )
+position = Vector2( 289, 85 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 5 )
 
