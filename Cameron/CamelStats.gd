@@ -32,11 +32,6 @@ func set_hp(val : float) -> void:
 	emit_signal("on_hp_change")
 
 
-func change_hp(val : float) -> void:
-	value = val
-	hp += val
-	emit_signal("on_hp_change")
-
 func get_hp() -> float:
 	return hp
 	
@@ -113,5 +108,6 @@ func _on_Area2D_body_entered(body):
 		body.queue_free()
 		self.hp -= 1
 		print(self.hp)
+		
 		$Timer.start()
 			

@@ -3,8 +3,8 @@ class_name Bar
 
 var camel_stats: CamelStats
 
-func init(l):
-	$Count/Background/Label.text = l
+func init():
+	pass
 
 func set_gauge():
 	pass

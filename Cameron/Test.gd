@@ -9,22 +9,19 @@ func _ready():
 #	camel_stats.hp += 10
 #	bar = HP_Bar.new()
 #	bar.setCamel(camel_stats)
-	$StatusBars/VBoxContainer/HealthBar.camel_stats = camel_stats
-	$StatusBars/VBoxContainer/HealthBar.init("HP")
-	$StatusBars/VBoxContainer/ThirstBar.camel_stats = camel_stats
-	$StatusBars/VBoxContainer/ThirstBar.init("Thirst")
+
+	for x in $StatusBars/VBoxContainer.get_children():
+		x.camel_stats = camel_stats
+		x.init()
+		x.set_gauge()
+		print()
 
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_end"):
-		camel_stats.hp -= 20
-		camel_stats.thirst -= 10
-	if $TileMap.world_to_map($Player.global_position) == Vector2(15,-6):
-		camel_stats.change_hp(-0.5)
 	if $TileMap.world_to_map($Player.global_position) == Vector2(19,-8) && not pickedUpWater:
 		$Inventory.add_item("Water Bottle")
 		$wBottle.visible = false
-		#queue_free(wBottle)
+		#queue_free(wBottle
 		pickedUpWater = true
 		
 	if $TileMap.world_to_map($Player.global_position) == Vector2(17,-6) && not pickedUpDates:
