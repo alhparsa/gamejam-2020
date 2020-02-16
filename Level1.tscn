@@ -1,12 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Tree.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/tileset/tileset_desert.png" type="Texture" id=2]
-[ext_resource path="res://Cameron/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Cameron/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/tileset_desert.png" type="Texture" id=3]
+[ext_resource path="res://Tree.gd" type="Script" id=4]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tileset_desert.png 0"
-0/texture = ExtResource( 2 )
+0/texture = ExtResource( 3 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 64, 32 )
@@ -16,7 +17,7 @@
 0/shapes = [  ]
 0/z_index = 0
 1/name = "tileset_desert.png 1"
-1/texture = ExtResource( 2 )
+1/texture = ExtResource( 3 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 32, 64, 32 )
@@ -26,7 +27,7 @@
 1/shapes = [  ]
 1/z_index = 0
 2/name = "tileset_desert.png 2"
-2/texture = ExtResource( 2 )
+2/texture = ExtResource( 3 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 64, 32, 64, 32 )
@@ -36,7 +37,7 @@
 2/shapes = [  ]
 2/z_index = 0
 3/name = "tileset_desert.png 3"
-3/texture = ExtResource( 2 )
+3/texture = ExtResource( 3 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 128, 32, 64, 32 )
@@ -46,7 +47,7 @@
 3/shapes = [  ]
 3/z_index = 0
 4/name = "tileset_desert.png 4"
-4/texture = ExtResource( 2 )
+4/texture = ExtResource( 3 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 192, 32, 64, 32 )
@@ -56,7 +57,7 @@
 4/shapes = [  ]
 4/z_index = 0
 5/name = "tileset_desert.png 5"
-5/texture = ExtResource( 2 )
+5/texture = ExtResource( 3 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 256, 32, 64, 32 )
@@ -66,7 +67,7 @@
 5/shapes = [  ]
 5/z_index = 0
 6/name = "tileset_desert.png 6"
-6/texture = ExtResource( 2 )
+6/texture = ExtResource( 3 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 320, 32, 64, 32 )
@@ -76,7 +77,7 @@
 6/shapes = [  ]
 6/z_index = 0
 7/name = "tileset_desert.png 7"
-7/texture = ExtResource( 2 )
+7/texture = ExtResource( 3 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 384, 32, 64, 32 )
@@ -86,7 +87,7 @@
 7/shapes = [  ]
 7/z_index = 0
 8/name = "tileset_desert.png 8"
-8/texture = ExtResource( 2 )
+8/texture = ExtResource( 3 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 448, 32, 64, 32 )
@@ -96,7 +97,7 @@
 8/shapes = [  ]
 8/z_index = 0
 9/name = "tileset_desert.png 9"
-9/texture = ExtResource( 2 )
+9/texture = ExtResource( 3 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 512, 32, 64, 32 )
@@ -106,7 +107,7 @@
 9/shapes = [  ]
 9/z_index = 0
 10/name = "tileset_desert.png 10"
-10/texture = ExtResource( 2 )
+10/texture = ExtResource( 3 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 576, 32, 64, 32 )
@@ -116,7 +117,7 @@
 10/shapes = [  ]
 10/z_index = 0
 11/name = "tileset_desert.png 11"
-11/texture = ExtResource( 2 )
+11/texture = ExtResource( 3 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 640, 32, 64, 32 )
@@ -126,7 +127,7 @@
 11/shapes = [  ]
 11/z_index = 0
 12/name = "tileset_desert.png 12"
-12/texture = ExtResource( 2 )
+12/texture = ExtResource( 3 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 704, 32, 64, 32 )
@@ -136,7 +137,7 @@
 12/shapes = [  ]
 12/z_index = 0
 13/name = "tileset_desert.png 13"
-13/texture = ExtResource( 2 )
+13/texture = ExtResource( 3 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 768, 32, 64, 32 )
@@ -146,7 +147,7 @@
 13/shapes = [  ]
 13/z_index = 0
 14/name = "tileset_desert.png 14"
-14/texture = ExtResource( 2 )
+14/texture = ExtResource( 3 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 832, 32, 64, 32 )
@@ -156,7 +157,7 @@
 14/shapes = [  ]
 14/z_index = 0
 15/name = "tileset_desert.png 15"
-15/texture = ExtResource( 2 )
+15/texture = ExtResource( 3 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
 15/region = Rect2( 896, 32, 64, 32 )
@@ -166,7 +167,7 @@
 15/shapes = [  ]
 15/z_index = 0
 16/name = "tileset_desert.png 16"
-16/texture = ExtResource( 2 )
+16/texture = ExtResource( 3 )
 16/tex_offset = Vector2( 0, 0 )
 16/modulate = Color( 1, 1, 1, 1 )
 16/region = Rect2( 960, 32, 64, 32 )
@@ -176,27 +177,27 @@
 16/shapes = [  ]
 16/z_index = 0
 
-[sub_resource type="ConvexPolygonShape2D" id=4]
+[sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 28.4788, 68.0804, 63.9779, 81.4764, 40.5351, 92.8629, 8.04999, 80.1368 )
 
-[sub_resource type="ConvexPolygonShape2D" id=5]
+[sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 33.7336, 65.3175, 56.1718, 75.3645, 23.0169, 92.7792, 0.578735, 81.3926 )
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
+[sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 29.0106, 64.6477, 63.8399, 81.3926, 38.7226, 92.7792, 7.91199, 77.3739 )
 
-[sub_resource type="ConvexPolygonShape2D" id=7]
+[sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 32.1012, 65.6524, 63.2467, 81.3926, 30.0918, 95.7932, 1.29065, 80.7228 )
 
-[sub_resource type="ConvexPolygonShape2D" id=8]
+[sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 34.5414, 58.0655, 56.9796, 76.1499, 32.8669, 79.8338, 8.08449, 76.1499 )
 
-[sub_resource type="ConvexPolygonShape2D" id=10]
+[sub_resource type="ConvexPolygonShape2D" id=7]
 points = PoolVector2Array( 30.9915, 63.4421, 55.1042, 76.4027, 26.169, 94.4872, -0.756821, 77.8092 )
 
-[sub_resource type="TileSet" id=9]
+[sub_resource type="TileSet" id=8]
 1/name = "tileset_desert.png 1"
-1/texture = ExtResource( 2 )
+1/texture = ExtResource( 3 )
 1/tex_offset = Vector2( 0, -64 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 64, 64, 64, 96 )
@@ -207,12 +208,12 @@ points = PoolVector2Array( 30.9915, 63.4421, 55.1042, 76.4027, 26.169, 94.4872, 
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 4 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, -64 )
 } ]
 1/z_index = 0
 2/name = "tileset_desert.png 2"
-2/texture = ExtResource( 2 )
+2/texture = ExtResource( 3 )
 2/tex_offset = Vector2( 0, -64 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 256, 64, 64, 96 )
@@ -223,12 +224,12 @@ points = PoolVector2Array( 30.9915, 63.4421, 55.1042, 76.4027, 26.169, 94.4872, 
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 5 ),
+"shape": SubResource( 3 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, -64 )
 } ]
 2/z_index = 0
 3/name = "tileset_desert.png 3"
-3/texture = ExtResource( 2 )
+3/texture = ExtResource( 3 )
 3/tex_offset = Vector2( 0, -64 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 320, 64, 64, 96 )
@@ -239,12 +240,12 @@ points = PoolVector2Array( 30.9915, 63.4421, 55.1042, 76.4027, 26.169, 94.4872, 
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 6 ),
+"shape": SubResource( 4 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, -64 )
 } ]
 3/z_index = 0
 4/name = "tileset_desert.png 4"
-4/texture = ExtResource( 2 )
+4/texture = ExtResource( 3 )
 4/tex_offset = Vector2( 0, -64 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 512, 64, 64, 96 )
@@ -255,12 +256,12 @@ points = PoolVector2Array( 30.9915, 63.4421, 55.1042, 76.4027, 26.169, 94.4872, 
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 7 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, -64 )
 } ]
 4/z_index = 0
 5/name = "tileset_desert.png 5"
-5/texture = ExtResource( 2 )
+5/texture = ExtResource( 3 )
 5/tex_offset = Vector2( 0, -64 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 0, 160, 64, 96 )
@@ -271,12 +272,12 @@ points = PoolVector2Array( 30.9915, 63.4421, 55.1042, 76.4027, 26.169, 94.4872, 
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 8 ),
+"shape": SubResource( 6 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, -64 )
 } ]
 5/z_index = 0
 6/name = "tileset_desert.png 6"
-6/texture = ExtResource( 2 )
+6/texture = ExtResource( 3 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 64, 64, 96 )
@@ -287,17 +288,17 @@ points = PoolVector2Array( 30.9915, 63.4421, 55.1042, 76.4027, 26.169, 94.4872, 
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 10 ),
+"shape": SubResource( 7 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, -64 )
 } ]
 6/z_index = 0
 
-[sub_resource type="ConvexPolygonShape2D" id=11]
+[sub_resource type="ConvexPolygonShape2D" id=9]
 points = PoolVector2Array( 31.3041, 0.0959473, 64.2357, 15.7245, 32.1413, 31.9113, 1.16327, 16.2827 )
 
-[sub_resource type="TileSet" id=2]
+[sub_resource type="TileSet" id=10]
 0/name = "tileset_desert.png 0"
-0/texture = ExtResource( 2 )
+0/texture = ExtResource( 3 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 608, 64, 32 )
@@ -308,7 +309,7 @@ points = PoolVector2Array( 31.3041, 0.0959473, 64.2357, 15.7245, 32.1413, 31.911
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 11 ),
+"shape": SubResource( 9 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -317,8 +318,11 @@ points = PoolVector2Array( 31.3041, 0.0959473, 64.2357, 15.7245, 32.1413, 31.911
 position = Vector2( 1353.49, 1141.06 )
 
 [node name="Tree" parent="." instance=ExtResource( 1 )]
-position = Vector2( -33.2781, -74.5754 )
-z_index = 0
+position = Vector2( 64.2442, 14.3467 )
+script = ExtResource( 4 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 35.6508, -9.33142 )
 
 [node name="floor" type="TileMap" parent="."]
 z_index = -4096
@@ -331,21 +335,17 @@ tile_data = PoolIntArray( -2686998, 0, 0, -2686997, 0, 0, -2686996, 0, 0, -26869
 [node name="wall" type="TileMap" parent="."]
 z_index = -1
 mode = 1
-tile_set = SubResource( 9 )
+tile_set = SubResource( 8 )
 cell_size = Vector2( 64, 32 )
 format = 1
 tile_data = PoolIntArray( -65539, 4, 0, -65538, 3, 0, -65537, 3, 0, -131072, 3, 0, -131071, 3, 0, -131070, 3, 0, -3, 2, 0, 65533, 2, 0, 131069, 2, 0, 196605, 2, 0, 262141, 2, 0, 327676, 1, 0, 327677, 5, 0 )
 
 [node name="water" type="TileMap" parent="."]
-editor/display_folded = true
 z_index = -4096
 mode = 1
-tile_set = SubResource( 2 )
+tile_set = SubResource( 10 )
 cell_size = Vector2( 64, 32 )
 format = 1
 tile_data = PoolIntArray( -458743, 0, 0, -393208, 0, 0, -393207, 0, 0, -327672, 0, 0, -327671, 0, 0, -262136, 0, 0, -262135, 0, 0, -196600, 0, 0, -196599, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0 )
 
 [node name="Area2D" type="Area2D" parent="water"]
-
-[node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 35.6508, -9.33138 )
