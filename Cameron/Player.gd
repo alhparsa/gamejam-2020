@@ -23,7 +23,10 @@ var can_press_space = false
 var object_for_space
 var pickedUpPickaxe
 
+var gun_imgs = []
 func _ready():
+	for f in ["botRight", "down", "right", "up", "upRight"]:
+		gun_imgs.append(load("res://assets/items/gun/%s.png"%f))
 	inv = get_parent().find_node("Inventory")
 	connect("on_gold_changed", $CanvasLayer/Label3, "set_text")
 	self.gold = 7
@@ -58,26 +61,42 @@ func _process(delta):
 	if Input.is_action_pressed("shift"):
 		speed_bonus = speed*10
 		$AnimationPlayer.playback_speed = 1.7
-	if velocity.x != 0:
-		$Sprite.flip_h = velocity.x < 0
+
+	$Gun.visible = true
 	if velocity.y == 0 and velocity.x != 0:
 		$AnimationPlayer.playback_speed = velocity.length()/40
 		$AnimationPlayer.play("walk_side")
+		$Gun.texture = gun_imgs[2]
+		$Gun.global_position = $GunPos.get_child(2).global_position
 	elif velocity.y > 0 and velocity.x == 0:
 		$AnimationPlayer.playback_speed = velocity.length()/40
 		$AnimationPlayer.play("walk_down")
+		$Gun.texture  = gun_imgs[1]
+		$Gun.global_position = $GunPos.get_child(1).global_position
 	elif velocity.y < 0 and velocity.x == 0:
 		$AnimationPlayer.playback_speed = velocity.length()/40
 		$AnimationPlayer.play("walk_up")
+		$Gun.global_position = $GunPos.get_child(3).global_position
+		$Gun.texture  = gun_imgs[3]
 	elif velocity.y < 0 and velocity.x != 0:
 		$AnimationPlayer.playback_speed = velocity.length()/40
 		$AnimationPlayer.play("walk_updiag")
+		$Gun.texture  = gun_imgs[4]
+		$Gun.global_position = $GunPos.get_child(4).global_position
 	elif velocity.y > 0 and velocity.x != 0:
 		$AnimationPlayer.playback_speed = velocity.length()/40
 		$AnimationPlayer.play("walk_downdiag")
+		$Gun.texture  = gun_imgs[0]
+		$Gun.global_position = $GunPos.get_child(0).global_position
 	else:
 		frame_i = 3
 		$AnimationPlayer.stop()
+	if velocity.x != 0:
+		var b = velocity.x < 0
+		$Sprite.flip_h = b
+		$Gun.flip_h = b
+		if b:
+			$Gun.position.x = -$Gun.position.x
 	velocity = move_and_slide(velocity*(speed_bonus +1))
 	$Sprite.frame = frame_i* 9 + start_i
 	
