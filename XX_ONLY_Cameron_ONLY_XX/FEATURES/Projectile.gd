@@ -5,6 +5,8 @@ var speed : int = 60
 var duration : int = 2
 var velocity : Vector2 = Vector2.ZERO
 
+var hit_body = CamelStats
+
 func start_projectile(angle):
 	angle +  + PI/2
 	$AnimationPlayer.play("throw")
@@ -15,7 +17,7 @@ func _physics_process(delta):
 
 
 func _on_Hitbox_body_entered(body):
-	if body is CamelStats:
+	if body is hit_body:
 		body.take_dmg(damage)
 		queue_free()
 

@@ -231,7 +231,7 @@ visible = false
 position = Vector2( -1.35494, -19.0398 )
 scale = Vector2( 0.619821, 0.619821 )
 frames = SubResource( 9 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="HitStun" type="Timer" parent="."]
@@ -305,5 +305,29 @@ stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Gun" type="Sprite" parent="."]
+scale = Vector2( 0.02, 0.02 )
+
+[node name="GunPos" type="Node2D" parent="."]
+
+[node name="br" type="Position2D" parent="GunPos"]
+position = Vector2( 2.48396, 5.49481 )
+
+[node name="br2" type="Position2D" parent="GunPos"]
+position = Vector2( -1.35488, 20.3233 )
+
+[node name="br3" type="Position2D" parent="GunPos"]
+position = Vector2( 15.2048, 3.1614 )
+
+[node name="br4" type="Position2D" parent="GunPos"]
+position = Vector2( -0.862049, -25.6144 )
+
+[node name="br5" type="Position2D" parent="GunPos"]
+position = Vector2( 17.5382, -19.4953 )
+
+[node name="ShootSpeed" type="Timer" parent="."]
+wait_time = 0.01
+one_shot = true
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

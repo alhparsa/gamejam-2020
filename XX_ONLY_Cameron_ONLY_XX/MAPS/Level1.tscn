@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/MAPS/BaseMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilemaps/water.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/tilemaps/floor.tres" type="TileSet" id=3]
 [ext_resource path="res://assets/tilemaps/wall.tres" type="TileSet" id=4]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 547.738, 212.236, 0, 0, 0, 0, 460.384, 161.442, 0, 0, 0, 0, 370.765, 202.207, 0, 0, 0, 0, 451.121, 251.389, 0, 0, 0, 0, 538.986, 217.539, 0, 0, 0, 0, 511.444, 281.005 )
+}
 
 [node name="BaseMap" index="0" instance=ExtResource( 1 )]
 
@@ -25,5 +30,15 @@ cell_size = Vector2( 64, 32 )
 format = 1
 tile_data = PoolIntArray( -65519, 26, 0 )
 
+[node name="FullStatusBar" parent="StatusBar" index="0"]
+margin_left = 17.064
+margin_top = 11.376
+margin_right = 17.064
+margin_bottom = 11.376
+
+[node name="Path2D" parent="." index="5"]
+curve = SubResource( 1 )
+
 [node name="Camel" parent="Path2D" index="0"]
 position = Vector2( 556.201, 207.959 )
+patrol_path = NodePath("..")

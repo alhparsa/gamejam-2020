@@ -3,9 +3,9 @@
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/STATUS_BAR/CamelStats.gd" type="Script" id=1]
 [ext_resource path="res://assets/Camel/camel-sheet-blurred.png" type="Texture" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 11.213
-height = 4.8247
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 11.5874
+height = 4.68988
 
 [sub_resource type="Animation" id=2]
 resource_name = "botleft"
@@ -76,16 +76,17 @@ position = Vector2( -0.214645, -8.15624 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.34575, 0.275196 )
 z_as_relative = false
-shape = SubResource( 1 )
+shape = SubResource( 10 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.21463, -4.93668 )
+position = Vector2( 0.858551, -5.36595 )
 scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 4
-frame = 7
+frame = 2
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
