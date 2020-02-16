@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Cameron/Test.gd" type="Script" id=1]
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://assets/items/Water Bottle.png" type="Texture" id=5]
 [ext_resource path="res://Camel.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/items/Dates.png" type="Texture" id=7]
+[ext_resource path="res://assets/SimranSprite.png" type="Texture" id=8]
+[ext_resource path="res://Cameron/Simran.gd" type="Script" id=9]
+
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -47,7 +50,18 @@ position = Vector2( 327.305, 86.9122 )
 rotation = 0.0102514
 patrol_path = NodePath("..")
 
+[node name="Camel" parent="Path2D/PathFollow2D" instance=ExtResource( 6 )]
+
 [node name="Dates" type="Sprite" parent="."]
 position = Vector2( 386.357, 97.606 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 7 )
+
+[node name="Simran" type="KinematicBody2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Simran"]
+position = Vector2( 288.896, 123.222 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 8 )
+hframes = 6
