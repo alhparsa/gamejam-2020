@@ -4,7 +4,7 @@
 [ext_resource path="res://Cameron/Simran.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 12.2753
+radius = 19.4078
 
 [node name="Simran" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -14,5 +14,5 @@ texture = ExtResource( 1 )
 hframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -9.55619, 29.4037 )
+position = Vector2( -8.30183, 28.1493 )
 shape = SubResource( 1 )

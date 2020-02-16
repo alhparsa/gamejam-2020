@@ -12,3 +12,5 @@ data_*/
 
 # Don't include project
 project.godot
+Cameron/HealthBar.tscn
+Cameron/ThirstBar.tscn

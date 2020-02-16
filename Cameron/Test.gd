@@ -1,19 +1,27 @@
 extends Node
 var pickedUpWater = false
 var pickedUpDates = false
-
 var camel_stats : CamelStats
 var b = []
 func _ready():
 	camel_stats = CamelStats.new()
-	camel_stats.connect("on_hp_change", self, "hi")
-	camel_stats.hp += 10
-	
+#	camel_stats.connect("on_hp_change", self, "hi")
+#	camel_stats.hp += 10
+#	bar = HP_Bar.new()
+#	bar.setCamel(camel_stats)
+
+	for x in $StatusBars/VBoxContainer.get_children():
+		x.camel_stats = camel_stats
+		x.init()
+		x.set_gauge()
+		print()
+
+
 func _process(delta):
 	if $TileMap.world_to_map($Player.global_position) == Vector2(19,-8) && not pickedUpWater:
 		$Inventory.add_item("Water Bottle")
 		$wBottle.visible = false
-		#queue_free(wBottle)
+		#queue_free(wBottle
 		pickedUpWater = true
 		
 	if $TileMap.world_to_map($Player.global_position) == Vector2(17,-6) && not pickedUpDates:

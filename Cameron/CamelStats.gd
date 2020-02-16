@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 class_name CamelStats
 
+var isTouchingSimran = false
+var bounceSpeed = 200
+
 var hp : float setget set_hp, get_hp
 var thirst : float setget set_thirst, get_thirst
 var hunger : float setget set_hunger, get_hunger
@@ -20,10 +23,15 @@ signal on_armor_change
 signal on_speed_change
 
 
+var value : float 
+
 func set_hp(val : float) -> void:
 	hp = val
+	if hp <= 0:
+		print("camel dead")
 	emit_signal("on_hp_change")
-	
+
+
 func get_hp() -> float:
 	return hp
 	
@@ -57,7 +65,7 @@ func get_speed() -> float:
 
 
 func _init() -> void:
-	self.hp = 100
+	self.hp = 10
 	self.thirst = 100
 	self.hunger = 100
 	self.armor = 30
@@ -79,17 +87,29 @@ func _physics_process(delta):
 		target = patrol_points[patrol_index]
 
 	velocity = (target - position).normalized() * get_speed()
-	var vect = move_and_slide(velocity)
+	if($Timer.time_left == 0):
+		var vect = move_and_slide(velocity)
+	else:
+		var vel= Vector2(randi() % 2, randi() % 2) * bounceSpeed
+		move_and_slide(vel)
 	
-#	var collideInfo = move_and_collide(velocity * delta)
-#	if(collideInfo):
-#		print(collideInfo.collider_id)
-#		if(collideInfo.collider_id == 1262):
-#			print("Player loses")
 
 func _process(delta):
 	z_index = (get_parent().get_parent().find_node("TileMap").world_to_map(global_position)).y
 
 
 func _on_Area2D_body_entered(body):
-	print(body.name)
+	if(body is Simran):
+		
+		var explosion = body.ExplosionScene.instance()
+		explosion.global_position = body.global_position
+		get_parent().add_child(explosion)
+		explosion.play()
+		body.queue_free()
+#		self.hp -= 1
+		set_hp(9)
+		print(self.hp)
+#		emit_signal("on_hp_change")
+		
+		$Timer.start()
+			
