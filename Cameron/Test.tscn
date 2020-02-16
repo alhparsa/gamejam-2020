@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Cameron/Test.gd" type="Script" id=1]
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=2]
@@ -36,7 +36,16 @@ tile_data = PoolIntArray( -1245167, 0, 2, -1245166, 0, 2, -1245165, 0, 2, -11796
 
 [node name="StatusBar" type="CanvasLayer" parent="."]
 
-[node name="FullStatusBar" parent="StatusBar" instance=ExtResource( 4 )]
+[node name="FullStatusBar" parent="StatusBar" instance=ExtResource( 9 )]
+margin_left = -0.815613
+margin_top = 2.44687
+margin_right = -0.815613
+margin_bottom = 2.4469
+
+[node name="Rock" parent="." instance=ExtResource( 13 )]
+position = Vector2( 442.608, 46.6978 )
+
+[node name="Items" type="Node2D" parent="."]
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( 20.593, -5.2251 )
@@ -59,7 +68,6 @@ shape = SubResource( 2 )
 position = Vector2( 344.239, 106.222 )
 z_index = 1
 speed = 60.0
-start_i = 8
 
 [node name="RangedSimran" parent="." instance=ExtResource( 7 )]
 position = Vector2( 161.016, 174.63 )
@@ -73,4 +81,4 @@ position = Vector2( 204.824, 134.111 )
 [node name="Simran" parent="." instance=ExtResource( 10 )]
 position = Vector2( 343.592, 49.652 )
 
-[node name="Items" type="Node2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]

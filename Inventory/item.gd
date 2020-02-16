@@ -22,7 +22,3 @@ func _init(itemName, type, weight, property, cost, craft_recipe, map_scale, inv_
 	self.map_scale=float(map_scale)
 	self.inv_scale=float(inv_scale)
 	self.image = load("res://assets/items/"+self.itemName+".png")
-	
-	
-
-
