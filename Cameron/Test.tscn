@@ -1,12 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Cameron/Test.gd" type="Script" id=1]
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Cameron/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Inventory/Inventory.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/items/Water Bottle.png" type="Texture" id=5]
 [ext_resource path="res://Camel.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/items/Dates.png" type="Texture" id=7]
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/ENEMY/RangedSimran.tscn" type="PackedScene" id=8]
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/STATUS_BAR/FullStatusBar.tscn" type="PackedScene" id=9]
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/ENEMY/GunSimran.tscn" type="PackedScene" id=10]
@@ -40,11 +38,6 @@ tile_data = PoolIntArray( -1245167, 0, 2, -1245166, 0, 2, -1245165, 0, 2, -11796
 
 [node name="FullStatusBar" parent="StatusBar" instance=ExtResource( 9 )]
 
-[node name="wBottle" type="Sprite" parent="."]
-position = Vector2( 431.823, 105.606 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 5 )
-
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( 20.593, -5.2251 )
 curve = SubResource( 1 )
@@ -53,11 +46,6 @@ curve = SubResource( 1 )
 position = Vector2( 403.23, 194.957 )
 rotation = 0.0102514
 patrol_path = NodePath("..")
-
-[node name="Dates" type="Sprite" parent="."]
-position = Vector2( 386.357, 97.606 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 7 )
 
 [node name="EndZone" type="KinematicBody2D" parent="."]
 
@@ -84,3 +72,5 @@ position = Vector2( 204.824, 134.111 )
 
 [node name="Simran" parent="." instance=ExtResource( 12 )]
 position = Vector2( 343.592, 49.652 )
+
+[node name="Items" type="Node2D" parent="."]
