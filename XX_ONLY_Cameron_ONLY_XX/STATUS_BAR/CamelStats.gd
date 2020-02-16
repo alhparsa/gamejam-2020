@@ -77,6 +77,7 @@ func _ready():
 		patrol_points = get_node(patrol_path).curve.get_baked_points()
 
 func _physics_process(delta):
+	$AnimationPlayer.play("botleft")
 	# Follow the path sho leggo 
 	if !patrol_path:
 		return
