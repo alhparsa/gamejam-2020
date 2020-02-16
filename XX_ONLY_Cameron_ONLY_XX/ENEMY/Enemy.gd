@@ -31,7 +31,7 @@ func _physics_process(delta):
 			elif global_position.x > camel.global_position.x + 10:
 				if scale.x < 0: scale.x = abs(scale.x)
 		follow_camel()
-	z_index = (get_parent().find_node("TileMap").world_to_map(global_position)).y
+	z_index = (get_parent().find_node("floor").world_to_map(global_position)).y
 	if camel != null:
 		if $AttackSpeed.is_stopped():
 			$AttackSpeed.start()
