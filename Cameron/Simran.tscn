@@ -1,24 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/SimranSprite.png" type="Texture" id=1]
 [ext_resource path="res://Cameron/Simran.gd" type="Script" id=2]
-[ext_resource path="res://Cameron/shadow.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 12.2753
+radius = 19.4078
 
 [node name="Simran" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -9.55619, 29.4037 )
-shape = SubResource( 1 )
-
-[node name="shadow" type="Sprite" parent="."]
-position = Vector2( -11.2175, 24.0172 )
-scale = Vector2( 2.67148, 1.85534 )
-texture = ExtResource( 3 )
-
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -8.30183, 28.1493 )
+shape = SubResource( 1 )

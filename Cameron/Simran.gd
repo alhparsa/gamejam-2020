@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 class_name Simran
 
+var ExplosionScene = load("res://Cameron/Explosion.tscn")
 var velocity : Vector2 = Vector2.ZERO
 var speed_bonus : int = 0
 var inputdir = Vector2(0,0)

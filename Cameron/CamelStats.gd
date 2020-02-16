@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 class_name CamelStats
 
-var isBouncing = false
+var isTouchingSimran = false
 var bounceSpeed = 200
 
 var hp : float setget set_hp, get_hp
@@ -21,6 +21,7 @@ signal on_thirst_change
 signal on_hunger_change
 signal on_armor_change
 signal on_speed_change
+
 
 
 func set_hp(val : float) -> void:
@@ -95,8 +96,13 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	if(body is Simran):
-		if($Timer.time_left == 0):
-			self.hp -= 1
+		
+		var explosion = body.ExplosionScene.instance()
+		explosion.global_position = body.global_position
+		get_parent().add_child(explosion)
+		explosion.play()
+		body.queue_free()
+		self.hp -= 1
 		print(self.hp)
 		$Timer.start()
 			
