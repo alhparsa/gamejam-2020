@@ -14,6 +14,9 @@ func init(deadly, obstacle_type1, obstacle_type2) -> void:
 	obstacletype1 = obstacle_type1
 	obstacletype2 = obstacle_type2
 	$Sprite.texture = load(obstacletype1)
+	
+func _process(delta):
+	z_index = get_parent().find_node("floor").world_to_map(global_position).y + 5
 
 func set_cleared(cleared : bool):
 	isCleared = cleared
