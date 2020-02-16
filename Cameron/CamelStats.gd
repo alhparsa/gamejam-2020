@@ -23,11 +23,20 @@ signal on_armor_change
 signal on_speed_change
 
 
+var value : float 
 
 func set_hp(val : float) -> void:
 	hp = val
+	if hp <= 0:
+		print("camel dead")
 	emit_signal("on_hp_change")
-	
+
+
+func change_hp(val : float) -> void:
+	value = val
+	hp += val
+	emit_signal("on_hp_change")
+
 func get_hp() -> float:
 	return hp
 	

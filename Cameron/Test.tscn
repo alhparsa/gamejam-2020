@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Cameron/Test.gd" type="Script" id=1]
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=2]
@@ -7,7 +7,8 @@
 [ext_resource path="res://assets/items/Water Bottle.png" type="Texture" id=5]
 [ext_resource path="res://Camel.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/items/Dates.png" type="Texture" id=7]
-[ext_resource path="res://Cameron/Simran.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Cameron/HealthBar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Cameron/ThirstBar.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -19,6 +20,24 @@ normal = Vector2( -0.435995, -0.899949 )
 
 [node name="Test" type="Node"]
 script = ExtResource( 1 )
+
+[node name="StatusBars" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatusBars"]
+margin_left = 216.659
+margin_top = -5.70157
+margin_right = 716.659
+margin_bottom = 104.298
+rect_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBar" parent="StatusBars/VBoxContainer" instance=ExtResource( 8 )]
+
+[node name="ThirstBar" parent="StatusBars/VBoxContainer" instance=ExtResource( 13 )]
+margin_top = 57.0
+margin_bottom = 110.0
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -6.18484, 0 )
@@ -50,10 +69,6 @@ patrol_path = NodePath("..")
 position = Vector2( 386.357, 97.606 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 7 )
-
-[node name="Simran2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 285.114, 123.222 )
-scale = Vector2( 0.3, 0.3 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 344.239, 106.222 )
