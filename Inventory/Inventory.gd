@@ -4,6 +4,7 @@ extends CanvasLayer
 var inv_holder = load("res://Inventory/ItemHolder.tscn")
 var items : Dictionary = {}
 var counter : int = 0
+var can_open : bool = false
 
 func _ready(): 
 	$Control.visible = false
@@ -12,11 +13,11 @@ func _ready():
 
 # warning-ignore:unused_argument
 func _process(delta):
-	if Input.is_action_just_pressed("tab"):
-		$Control.visible = true
-	if Input.is_action_just_released("tab"):
-		$Control.visible = false
-	
+	if can_open and Input.is_action_pressed("tab"):
+			$Control.visible = true
+	else:
+			$Control.visible = false
+
 func add_item(item : String):
 	var holder = $Control/GridContainer.get_child(counter)
 	if item in items:
