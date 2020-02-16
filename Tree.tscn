@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Obstacle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tree.gd" type="Script" id=2]
+[ext_resource path="res://assets/obstacles/trees/tree1.png" type="Texture" id=3]
+
+[node name="Tree" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" parent="." index="1"]
+position = Vector2( 2.48529, 53.3207 )
+
+[node name="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+position = Vector2( -0.242996, 1.32343 )
+z_index = 999
