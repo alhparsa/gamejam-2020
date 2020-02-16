@@ -31,6 +31,8 @@ func display_items():
 
 
 func _process(delta):
+	if $Path2D.get_child_count() == 0:
+		return
 	for item in items_picked_up.values():
 		if ($Player.position - item.loc).length() < 15 and not item.pickedUp:
 			$Inventory.add_item(item.item_name)
