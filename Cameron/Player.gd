@@ -27,7 +27,6 @@ func _process(delta):
 	if velocity.x != 0:
 		$Sprite.flip_h = velocity.x < 0
 	if velocity.y == 0 and velocity.x != 0:
-		print(velocity.length())
 		$AnimationPlayer.playback_speed = velocity.length()/40
 		$AnimationPlayer.play("walk_side")
 	elif velocity.y > 0 and velocity.x == 0:
