@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Inventory/ItemHolder.gd" type="Script" id=1]
-[ext_resource path="res://assets/items/bg_32.png" type="Texture" id=2]
+[ext_resource path="res://assets/items/bg_trans_32.png" type="Texture" id=2]
 [ext_resource path="res://Inventory/Arial.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/items/badge.png" type="Texture" id=4]
 [ext_resource path="res://Inventory/CounterItem.gd" type="Script" id=5]

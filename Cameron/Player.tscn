@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Cameron/Player.gd" type="Script" id=1]
-[ext_resource path="res://Cameron/civilian.png" type="Texture" id=2]
-[ext_resource path="res://Cameron/shadow.png" type="Texture" id=3]
+[ext_resource path="res://Cameron/shadow.png" type="Texture" id=2]
+[ext_resource path="res://Cameron/civilian.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 51.3741
@@ -164,10 +164,10 @@ shape = SubResource( 1 )
 
 [node name="Shadow" type="Sprite" parent="."]
 position = Vector2( -0.8, 2.9 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 8
 hframes = 9
 frame = 35

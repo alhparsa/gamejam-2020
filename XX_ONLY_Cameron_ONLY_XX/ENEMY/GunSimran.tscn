@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/SPRITES/GunSimran.png" type="Texture" id=1]
+[ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/ENEMY/RangedSimran.tscn" type="PackedScene" id=2]
+[ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/ENEMY/GunSimran.gd" type="Script" id=3]
+
+[node name="GunSimran" instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 1 )
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource( 1 )
+hframes = 1
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 1.24762, 3.53968 )
