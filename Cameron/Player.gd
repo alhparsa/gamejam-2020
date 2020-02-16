@@ -12,7 +12,7 @@ export(int) var frame_i : int = 0
 export(int) var start_i : int = 0
 
 func _process(delta):
-	z_index = (get_parent().find_node("TileMap").world_to_map(global_position)).y
+	z_index = (get_parent().find_node("floor").world_to_map(global_position)).y
 	inputdir.x = -Input.get_action_strength("left") + Input.get_action_strength("right")
 	inputdir.y = +Input.get_action_strength("down") - Input.get_action_strength("up")
 	
