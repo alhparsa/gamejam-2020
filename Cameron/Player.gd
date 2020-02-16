@@ -8,6 +8,7 @@ var speed_bonus : int = 0
 var inputdir = Vector2(0,0)
 var joystickstrength
 var inv
+var bullet = load("res://XX_ONLY_Cameron_ONLY_XX/FEATURES/Projectile_Bullet.tscn")
 
 signal on_gold_changed(x)
 func set_gold(v):
@@ -15,10 +16,11 @@ func set_gold(v):
 	emit_signal("on_gold_changed", str(gold))
 	
 
-export(float) var speed : float = 200
+export(float) var speed : float = 100
 export(int) var frame_i : int = 0
 export(int) var start_i : int = 0
 
+var pv = Vector2.DOWN
 var can_press_space = false
 var object_for_space
 var pickedUpPickaxe
@@ -32,6 +34,8 @@ func _ready():
 	self.gold = 7
 
 func _process(delta):
+	if Input.is_action_just_pressed("lc") or Input.is_action_pressed("shoot"):
+		shoot()
 	if not $HitStun.is_stopped():
 		return
 	
@@ -97,14 +101,28 @@ func _process(delta):
 		$Gun.flip_h = b
 		if b:
 			$Gun.position.x = -$Gun.position.x
+	if velocity != Vector2.ZERO:
+		pv = velocity
 	velocity = move_and_slide(velocity*(speed_bonus +1))
 	$Sprite.frame = frame_i* 9 + start_i
-	
+
+func shoot():
+	if $ShootSpeed.is_stopped() and $HitStun.is_stopped():
+		var p = bullet.instance()
+		p.global_position = $Gun.global_position
+		p.hit_body = Enemy
+		var r = (p.global_position + pv).angle_to_point(p.global_position)
+		 #get_global_mouse_position().angle_to_point(p.global_position)
+		p.rotate(r)
+		p.start_projectile(r)
+		
+		get_parent().add_child(p)
+		$ShootSpeed.start()
+
 func _on_Area2D_body_entered(body):
 	if body is Rock:
 		can_press_space = true
 		object_for_space = body
-
 
 func _on_Area2D_body_exited(body):
 	if body is Rock:
