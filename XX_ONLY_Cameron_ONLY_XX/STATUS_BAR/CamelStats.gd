@@ -86,7 +86,7 @@ func _physics_process(delta):
 		target = patrol_points[patrol_index]
 
 	velocity = (target - position).normalized() * get_speed()
-	if($Timer.time_left == 0):
+	if($Timer.is_stopped()):
 		var vect = move_and_slide(velocity)
 	else:
 		var vel= Vector2(randi() % 2, randi() % 2) * bounceSpeed
@@ -98,7 +98,9 @@ func _process(delta):
 
 func take_dmg(dmg : int):
 	dmg -= armor
-	if dmg > 0:
+	if dmg > 5:
+		hit_stun()
+	if(dmg > 0):
 		self.hp -= dmg
 		print("CAMEL TOOK %d dmg"%dmg)
 			
@@ -106,3 +108,10 @@ func on_death():
 	pass
 
 
+func hit_stun():
+	$Timer.start()
+
+
+func _on_ThirstDrain_timeout():
+	self.thirst -= 1
+	self.hunger -= 2
