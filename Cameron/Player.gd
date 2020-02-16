@@ -40,11 +40,12 @@ func _remove_rock(rock):
 
 
 func _process(delta):
+	z_index = (get_parent().find_node("floor").world_to_map(global_position)).y
 	checkRock()
 	
-	if $HitStun.time_left > 0:
-		return
-	z_index = (get_parent().find_node("TileMap").world_to_map(global_position)).y
+#	if $HitStun.time_left > 0:
+#		return
+		
 	inputdir.x = -Input.get_action_strength("left") + Input.get_action_strength("right")
 	inputdir.y = +Input.get_action_strength("down") - Input.get_action_strength("up")
 	

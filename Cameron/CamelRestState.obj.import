@@ -15,5 +15,4 @@ dest_files=[ "res://.import/CamelRestState.obj-583ab689715a36b0db440226f442dfd7.
 
 generate_tangents=true
 scale_mesh=Vector3( 1, 1, 1 )
-offset_mesh=Vector3( 0, 0, 0 )
 optimize_mesh=true
