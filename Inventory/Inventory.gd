@@ -14,9 +14,9 @@ func _ready():
 # warning-ignore:unused_argument
 func _process(delta):
 	if can_open and Input.is_action_pressed("tab"):
-			$Control.visible = true
+		$Control.visible = true
 	else:
-			$Control.visible = false
+		$Control.visible = false
 
 func add_item(item : String):
 	var holder = $Control/GridContainer.get_child(counter)
