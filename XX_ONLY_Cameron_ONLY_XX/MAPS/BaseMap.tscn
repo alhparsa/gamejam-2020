@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/STATUS_BAR/FullStatusBar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Inventory/Inventory.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Camel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Cameron/Player.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array(  )
+}
+
+[node name="BaseMap" type="Node"]
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 1, 0.825 )
+z_index = -999
+mode = 1
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 16 )
+format = 1
+
+[node name="Inventory" parent="." instance=ExtResource( 3 )]
+
+[node name="StatusBar" type="CanvasLayer" parent="."]
+
+[node name="FullStatusBar" parent="StatusBar" instance=ExtResource( 2 )]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="Camel" parent="Path2D" instance=ExtResource( 4 )]
+
+[node name="EndZone" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndZone"]
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 671.353, 188.885 )
+
+[node name="Items" type="Node2D" parent="."]

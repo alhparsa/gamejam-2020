@@ -188,7 +188,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 0.380241, -8.66273 )
+position = Vector2( -185.612, 61.1997 )
 script = ExtResource( 1 )
 speed = 50.0
 start_i = 8
@@ -223,7 +223,7 @@ anims/walk_updiag = SubResource( 7 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -0.167, 10.2128 )
+position = Vector2( -0.232269, 9.75591 )
 shape = SubResource( 8 )
 
 [node name="Mining" type="AnimatedSprite" parent="."]
@@ -231,7 +231,7 @@ visible = false
 position = Vector2( -1.35494, -19.0398 )
 scale = Vector2( 0.619821, 0.619821 )
 frames = SubResource( 9 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="HitStun" type="Timer" parent="."]
@@ -282,7 +282,7 @@ __meta__ = {
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -190.0
-margin_right = -1.0
+margin_right = -10.0
 margin_bottom = 72.0
 custom_fonts/font = SubResource( 12 )
 text = "500"
