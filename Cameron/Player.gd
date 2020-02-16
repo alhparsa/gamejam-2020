@@ -7,13 +7,18 @@ var speed_bonus : int = 0
 var inputdir = Vector2(0,0)
 var joystickstrength
 
+
 export(float) var speed : float = 60
 export(int) var frame_i : int = 0
 export(int) var start_i : int = 0
 
+signal front_rock
+
 func _process(delta):
 	inputdir.x = -Input.get_action_strength("left") + Input.get_action_strength("right")
 	inputdir.y = +Input.get_action_strength("down") - Input.get_action_strength("up")
+
+	
 	
 	inputdir = inputdir.clamped(1)
 	joystickstrength = sqrt(pow(abs(inputdir.y), 2) + pow(abs(inputdir.x), 2))
