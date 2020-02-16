@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Cameron/Bar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Cameron/ThirstBar.gd" type="Script" id=2]
+
+[node name="ThirstBar" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Label" parent="Count/Background" index="1"]
+margin_left = -47.0
+margin_right = -7.0
+align = 1
+valign = 1
