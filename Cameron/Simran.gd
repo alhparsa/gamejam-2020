@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+class_name Simran
 
 var velocity : Vector2 = Vector2.ZERO
 var speed_bonus : int = 0
