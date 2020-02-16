@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/SPRITES/AnimeGirl.png" type="Texture" id=1]
+[ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/SPRITES/MarketStand.png" type="Texture" id=2]
+[ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/FEATURES/Marketplace.gd" type="Script" id=3]
+[ext_resource path="res://Inventory/Arial.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 144.146
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 23.2621
+
+[node name="Marketplace" type="StaticBody2D"]
+script = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -151.5
+margin_top = -300.0
+margin_right = 151.5
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+margin_right = 303.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 3 )
+text = "Welcome!
+Please look around..."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer"]
+margin_top = 79.0
+margin_right = 303.0
+margin_bottom = 79.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.740631, 2.5396 )
+scale = Vector2( 0.0599655, 0.0599655 )
+z_index = -234
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 120, 20, 280, 490 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MarketStand" type="Sprite" parent="Sprite"]
+position = Vector2( 20.0544, -58.0005 )
+scale = Vector2( 1.34789, 1.5217 )
+texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sprite"]
+position = Vector2( -681.01, -519.49 )
+scale = Vector2( 4.40397, 4.40397 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+position = Vector2( 162.901, 108.329 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2.57566, 1.71711 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="Sprite/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Sprite/Area2D" to="." method="_on_Area2D_body_exited"]

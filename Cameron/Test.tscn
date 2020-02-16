@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Cameron/Test.gd" type="Script" id=1]
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Inventory/Inventory.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Rock.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Camel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/FEATURES/Level1_Marketplace.tscn" type="PackedScene" id=7]
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/ENEMY/RangedSimran.tscn" type="PackedScene" id=8]
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/STATUS_BAR/FullStatusBar.tscn" type="PackedScene" id=9]
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/ENEMY/GunSimran.tscn" type="PackedScene" id=10]
@@ -14,7 +15,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 405.406, 194.543, 0, 0, 0, 0, 370.989, 190.765, 0, 0, 0, 0, 266.778, 209.24, 0, 0, 0, 0, 119.809, 140.125, 0, 0, 0, 0, 227.056, 98.02, 0, 0, 0, 0, 105.509, 69.0234, 0, 0, 0, 0, 343.44, 11.0301, 0, 0, 0, 0, 432.378, 31.7813, 0, 0, 0, 0, 375.559, 42.8072, 0, 0, 0, 0, 331.071, 67.0373, 0, 0, 0, 0, 436.328, 80.0472, 0, 0, 0, 0, 364.437, 115.1, 0, 0, 0, 0, 452.925, 106.173, 0, 0, 0, 0, 500.035, 62.3169, 0, 0, 0, 0, 498.837, 126.98, 0, 0, 0, 0, 427.107, 130.761, 0, 0, 0, 0, 415.735, 134.757, 0, 0, 0, 0, 461.454, 159.253, 0, 0, 0, 0, 476.212, 158.839, 0, 0, 0, 0, 482.657, 176.076, 0, 0, 0, 0, 500.194, 170.98, 0, 0, 0, 0, 528.582, 192.263 )
+"points": PoolVector2Array( 0, 0, 0, 0, 405.406, 194.543, 0, 0, 0, 0, 370.989, 190.765, 0, 0, 0, 0, 266.778, 209.24, 0, 0, 0, 0, 119.809, 140.125, 0, 0, 0, 0, 227.056, 98.02, 0, 0, 0, 0, 105.509, 69.0234, 0, 0, 0, 0, 343.44, 11.0301, 0, 0, 0, 0, 381.651, 26.9888, 0, 0, 0, 0, 351.238, 66.1187, 0, 0, 0, 0, 392.111, 85.6837, 0, 0, 0, 0, 364.437, 115.1, 0, 0, 0, 0, 452.925, 106.173, 0, 0, 0, 0, 490.344, 74.4371, 0, 0, 0, 0, 498.837, 126.98, 0, 0, 0, 0, 427.107, 130.761, 0, 0, 0, 0, 415.735, 134.757, 0, 0, 0, 0, 461.454, 159.253, 0, 0, 0, 0, 476.212, 158.839, 0, 0, 0, 0, 482.657, 176.076, 0, 0, 0, 0, 500.194, 170.98, 0, 0, 0, 0, 528.582, 192.263 )
 }
 
 [sub_resource type="LineShape2D" id=2]
@@ -65,15 +66,18 @@ speed = 60.0
 position = Vector2( 161.016, 174.63 )
 
 [node name="GunSimran" parent="." instance=ExtResource( 10 )]
-position = Vector2( 477.509, 60.8095 )
+position = Vector2( 506.549, 67.0681 )
 
 [node name="ExplodingSimran" parent="." instance=ExtResource( 11 )]
 position = Vector2( 204.824, 134.111 )
 
 [node name="Simran" parent="." instance=ExtResource( 12 )]
-position = Vector2( 343.592, 49.652 )
+position = Vector2( 341.267, 53.3325 )
 
 [node name="Items" type="Node2D" parent="."]
 
 [node name="Rock" parent="." instance=ExtResource( 5 )]
 position = Vector2( 318.111, 94.3388 )
+
+[node name="Marketplace" parent="." instance=ExtResource( 7 )]
+position = Vector2( 459.089, 49.7568 )

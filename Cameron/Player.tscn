@@ -1,14 +1,18 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Cameron/Player.gd" type="Script" id=1]
 [ext_resource path="res://Cameron/shadow.png" type="Texture" id=2]
 [ext_resource path="res://Cameron/civilian.png" type="Texture" id=3]
+[ext_resource path="res://Inventory/Arial.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/Mining5.png" type="Texture" id=5]
 [ext_resource path="res://assets/Mining3.png" type="Texture" id=6]
 [ext_resource path="res://assets/Mining6.png" type="Texture" id=7]
 [ext_resource path="res://assets/Mining1.png" type="Texture" id=8]
 [ext_resource path="res://assets/Mining2.png" type="Texture" id=9]
 [ext_resource path="res://assets/Mining4.png" type="Texture" id=10]
+[ext_resource path="res://assets/items/bg_32.png" type="Texture" id=11]
+[ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/FEATURES/PressSpace.gd" type="Script" id=12]
+[ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/SPRITES/coin.png" type="Texture" id=13]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 51.3741
@@ -167,6 +171,22 @@ animations = [ {
 "speed": 12.0
 } ]
 
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 48
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( -185.612, 61.1997 )
 script = ExtResource( 1 )
@@ -211,10 +231,79 @@ visible = false
 position = Vector2( -1.35494, -19.0398 )
 scale = Vector2( 0.619821, 0.619821 )
 frames = SubResource( 9 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="HitStun" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 7
+
+[node name="PressSpace" type="Panel" parent="CanvasLayer"]
+visible = false
+margin_left = 433.0
+margin_top = 470.0
+margin_right = 577.0
+margin_bottom = 511.0
+custom_styles/panel = SubResource( 10 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/PressSpace"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 11 )
+text = "SPACE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CanvasLayer/PressSpace"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 151.37
+margin_top = -1.0
+margin_right = 250.37
+margin_bottom = -1.0
+custom_fonts/font = SubResource( 11 )
+text = "Mine Rock"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -190.0
+margin_right = -1.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 12 )
+text = "500"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Label3"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 27.2878
+margin_top = -43.3204
+margin_right = 133.288
+margin_bottom = 40.6796
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

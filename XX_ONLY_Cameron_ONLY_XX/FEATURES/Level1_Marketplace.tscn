@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/FEATURES/Marketplace.tscn" type="PackedScene" id=1]
+[ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/FEATURES/Level1_Marketplace.gd" type="Script" id=2]
+
+[node name="Marketplace" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
