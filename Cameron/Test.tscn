@@ -10,7 +10,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 290.085, 79.0183, 0, 0, 0, 0, 319.813, 91.3852, 0, 0, 0, 0, 288.896, 105.655, 0, 0, 0, 0, 352.158, 132.529 )
+"points": PoolVector2Array( 0, 0, 0, 0, 403.133, 135.986, 0, 0, 0, 0, 388.687, 128.917, 0, 0, 0, 0, 398.215, 115.701, 0, 0, 0, 0, 414.505, 119.696, 0, 0, 0, 0, 410.51, 87.1164, 0, 0, 0, 0, 418.501, 67.1382, 0, 0, 0, 0, 435.406, 77.5883, 0, 0, 0, 0, 421.882, 83.1208, 0, 0, 0, 0, 420.96, 76.3589, 0, 0, 0, 0, 436.328, 80.0472, 0, 0, 0, 0, 436.328, 112.32, 0, 0, 0, 0, 452.925, 106.173, 0, 0, 0, 0, 456.921, 123.077, 0, 0, 0, 0, 442.167, 137.216, 0, 0, 0, 0, 427.107, 130.761, 0, 0, 0, 0, 415.735, 134.757, 0, 0, 0, 0, 403.133, 135.986 )
 }
 
 [node name="Test" type="Node"]
@@ -39,13 +39,13 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 5 )
 
 [node name="Path2D" type="Path2D" parent="."]
+position = Vector2( 20.593, -5.2251 )
 curve = SubResource( 1 )
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 290.085, 79.0183 )
-rotation = 0.394224
-
-[node name="Camel" parent="Path2D/PathFollow2D" instance=ExtResource( 6 )]
+[node name="Camel" parent="Path2D" instance=ExtResource( 6 )]
+position = Vector2( 327.305, 86.9122 )
+rotation = 0.0102514
+patrol_path = NodePath("..")
 
 [node name="Dates" type="Sprite" parent="."]
 position = Vector2( 386.357, 97.606 )
