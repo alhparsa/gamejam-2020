@@ -78,7 +78,6 @@ position = Vector2( 161.016, 174.63 )
 
 [node name="GunSimran" parent="." instance=ExtResource( 10 )]
 position = Vector2( 477.509, 60.8095 )
-scale = Vector2( 0.3, 0.3 )
 
 [node name="ExplodingSimran" parent="." instance=ExtResource( 11 )]
 position = Vector2( 204.824, 134.111 )
