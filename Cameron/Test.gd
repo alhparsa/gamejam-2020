@@ -10,16 +10,17 @@ func _ready():
 	camel_stats.hp += 10
 	
 func _process(delta):
-	if $TileMap.world_to_map($Player.global_position) == Vector2(0,-2) && not pickedUpWater:
+	if $TileMap.world_to_map($Player.global_position) == Vector2(19,-8) && not pickedUpWater:
 		$Inventory.add_item("Water Bottle")
 		$wBottle.visible = false
 		#queue_free(wBottle)
 		pickedUpWater = true
 		
-	if $TileMap.world_to_map($Player.global_position) == Vector2(1,2) && not pickedUpDates:
+	if $TileMap.world_to_map($Player.global_position) == Vector2(17,-6) && not pickedUpDates:
 		$Inventory.add_item("Dates")
+		$Dates.visible = false;
 		pickedUpDates = true
 	
 
 func hi():
-	print("FUCK YOU")
+	print("Simran Style")
