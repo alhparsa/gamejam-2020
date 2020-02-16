@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Cameron/Test.gd" type="Script" id=1]
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=2]
@@ -14,6 +14,9 @@
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 290.085, 79.0183, 0, 0, 0, 0, 319.813, 91.3852, 0, 0, 0, 0, 288.896, 105.655, 0, 0, 0, 0, 352.158, 132.529 )
 }
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 5.0
 
 [node name="Test" type="Node"]
 script = ExtResource( 1 )
@@ -58,7 +61,11 @@ texture = ExtResource( 7 )
 script = ExtResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="Simran"]
-position = Vector2( 288.896, 123.222 )
+position = Vector2( 274.656, 113.606 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 8 )
 hframes = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Simran"]
+position = Vector2( 272.521, 122.913 )
+shape = SubResource( 2 )
