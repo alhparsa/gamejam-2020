@@ -86,6 +86,7 @@ func _physics_process(delta):
 		target = patrol_points[patrol_index]
 
 	velocity = (target - position).normalized() * get_speed()
+	
 	if($Timer.is_stopped()):
 		var vect = move_and_slide(velocity)
 	else:
