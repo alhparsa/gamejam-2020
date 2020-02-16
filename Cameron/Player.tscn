@@ -231,7 +231,7 @@ visible = false
 position = Vector2( -1.35494, -19.0398 )
 scale = Vector2( 0.619821, 0.619821 )
 frames = SubResource( 9 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="HitStun" type="Timer" parent="."]
