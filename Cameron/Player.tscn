@@ -151,22 +151,23 @@ tracks/1/keys = {
 }
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( -185.612, 61.1997 )
+position = Vector2( 0.0573635, -0.0961847 )
 script = ExtResource( 1 )
 speed = 50.0
 frame_i = 2
 start_i = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.383667, 9.89874 )
+position = Vector2( -0.0246887, 0.0268326 )
 scale = Vector2( 0.1, 0.1 )
 shape = SubResource( 1 )
 
 [node name="Shadow" type="Sprite" parent="."]
-position = Vector2( -0.8, 2.9 )
+position = Vector2( -0.441022, -6.97192 )
 texture = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.358978, -9.87192 )
 texture = ExtResource( 3 )
 vframes = 8
 hframes = 9
