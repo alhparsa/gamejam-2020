@@ -23,6 +23,7 @@ mode = 1
 tile_set = ExtResource( 4 )
 cell_size = Vector2( 64, 32 )
 format = 1
+tile_data = PoolIntArray( -65519, 26, 0 )
 
 [node name="Camel" parent="Path2D" index="0"]
 position = Vector2( 556.201, 207.959 )

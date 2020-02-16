@@ -15,7 +15,7 @@ func set_gold(v):
 	emit_signal("on_gold_changed", str(gold))
 	
 
-export(float) var speed : float = 60
+export(float) var speed : float = 200
 export(int) var frame_i : int = 0
 export(int) var start_i : int = 0
 
