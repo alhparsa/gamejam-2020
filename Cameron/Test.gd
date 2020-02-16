@@ -6,7 +6,8 @@ func _ready():
 	$StatusBar/FullStatusBar/BarsHolder.camel_stats = $Path2D/Camel
 	create_items()
 	pass
-
+	
+	
 
 func create_items():
 	randomize()
@@ -30,7 +31,10 @@ func display_items():
 		$Items.add_child(sprite)
 
 
+
 func _process(delta):
+	if $Path2D.get_child_count() == 0:
+		return
 	for item in items_picked_up.values():
 		if ($Player.position - item.loc).length() < 15 and not item.pickedUp:
 			$Inventory.add_item(item.item_name)

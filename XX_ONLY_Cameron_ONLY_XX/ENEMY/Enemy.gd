@@ -45,12 +45,10 @@ func destruction():
 		camel.take_dmg(attack)
 		
 func follow_camel():
-	var camelPosition = get_parent().get_node("Path2D/Camel")
-	if camelPosition == null:
+	var camelPosition = get_parent().get_node("Path2D")
+	if camelPosition.get_child_count() == 0:
 		return
-
-		
-	camelPosition = camelPosition.get_position()
+	camelPosition = camelPosition.get_child(0).get_position()
 	inputdir.x = camelPosition[0] - self.get_position()[0]
 	inputdir.y = camelPosition[1] - self.get_position()[1]
 	inputdir = inputdir.clamped(1)
