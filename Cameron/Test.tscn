@@ -4,13 +4,13 @@
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Cameron/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Inventory/Inventory.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Rock.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Camel.tscn" type="PackedScene" id=6]
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/ENEMY/RangedSimran.tscn" type="PackedScene" id=8]
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/STATUS_BAR/FullStatusBar.tscn" type="PackedScene" id=9]
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/ENEMY/GunSimran.tscn" type="PackedScene" id=10]
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/ENEMY/ExplodingSimran.tscn" type="PackedScene" id=11]
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/ENEMY/Simran.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Rock.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -38,15 +38,6 @@ tile_data = PoolIntArray( -1245167, 0, 2, -1245166, 0, 2, -1245165, 0, 2, -11796
 [node name="StatusBar" type="CanvasLayer" parent="."]
 
 [node name="FullStatusBar" parent="StatusBar" instance=ExtResource( 9 )]
-margin_left = -0.815613
-margin_top = 2.44687
-margin_right = -0.815613
-margin_bottom = 2.4469
-
-[node name="Rock" parent="." instance=ExtResource( 13 )]
-position = Vector2( 442.608, 46.6978 )
-
-[node name="Items" type="Node2D" parent="."]
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( 20.593, -5.2251 )
@@ -82,4 +73,7 @@ position = Vector2( 204.824, 134.111 )
 [node name="Simran" parent="." instance=ExtResource( 12 )]
 position = Vector2( 343.592, 49.652 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Rock" parent="." instance=ExtResource( 5 )]
+position = Vector2( 318.111, 94.3388 )

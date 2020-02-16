@@ -14,8 +14,8 @@ func _ready() :
 		{}, 0.3, 5), 
 		"Torch" : Item.new("Torch", "Weapon", 5, {"Weapon": 10}, 10.0, \
 		{}, 10.0, 10),
-		"Rock" : Item.new("Rock", "obstacle", -1, {"interaction":5, "collision": Vector2(0,0)}, -1, \
-		{}, 0.30, 0.3),
+#		"Rock" : Item.new("Rock", "obstacle", -1, {"interaction":5, "collision": Vector2(0,0)}, -1, \
+#		{}, 0.30, 0.3),
 		"Pickaxe" : Item.new("Pickaxe", "Tool", 5, {"Tool": 10}, 10.0, \
 		{}, 0.5, 10)
 		}

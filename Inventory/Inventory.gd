@@ -13,6 +13,7 @@ func _ready():
 
 # warning-ignore:unused_argument
 func _process(delta):
+	print(items)
 	if can_open and Input.is_action_pressed("tab"):
 		$Control.visible = true
 	else:

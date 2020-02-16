@@ -6,44 +6,29 @@ var velocity : Vector2 = Vector2.ZERO
 var speed_bonus : int = 0
 var inputdir = Vector2(0,0)
 var joystickstrength
-var Rock
+var inv
 
 export(float) var speed : float = 60
 export(int) var frame_i : int = 0
 export(int) var start_i : int = 0
 
-var can_press_space
+var can_press_space = false
 var object_for_space
 var pickedUpPickaxe
 
 func _ready():
-	Rock = get_parent().get_node("Rock")
-
-func checkRock():
-	if get_parent().get_node('Rock'):
-		if (Rock.position - get_parent().get_node('Player').position).length() < 20 and "Pickaxe" in get_parent().get_node("Inventory").items:
-			if can_press_space and Input.is_action_just_pressed("space"):
-				print("spce")
-				$HitStun.start()
-				$Mining.visible = true
-				
-				#$Area2D.connect("body_entered", self, '_remove_rock', [Rock])
-				
-				$HitStun.connect("timeout", $Mining, "set_visible", [false])
-				can_press_space = false
-			can_press_space = true
-	
-
-func _remove_rock(rock):
-	print("Here")
-	rock.visible = false
-
+	inv = get_parent().find_node("Inventory")
 
 func _process(delta):
-	checkRock()
-	
-	if $HitStun.time_left > 0:
+	if not $HitStun.is_stopped():
 		return
+	if Input.is_action_just_pressed("space") and can_press_space and "Pickaxe" in inv.items:
+		$HitStun.start()
+		$Mining.visible= true
+		$HitStun.connect("timeout", object_for_space, "queue_free")
+		$HitStun.connect("timeout", $Mining, "set_visible", [false])
+		can_press_space = false
+
 	z_index = (get_parent().find_node("TileMap").world_to_map(global_position)).y
 	inputdir.x = -Input.get_action_strength("left") + Input.get_action_strength("right")
 	inputdir.y = +Input.get_action_strength("down") - Input.get_action_strength("up")
@@ -74,15 +59,13 @@ func _process(delta):
 	elif velocity.y > 0 and velocity.x != 0:
 		$AnimationPlayer.playback_speed = velocity.length()/40
 		$AnimationPlayer.play("walk_downdiag")
-
-
 	else:
 		frame_i = 3
 		$AnimationPlayer.stop()
 	velocity = move_and_slide(velocity*(speed_bonus +1))
 	$Sprite.frame = frame_i* 9 + start_i
 	
-
-
-func _on_HitStun_timeout():
-	$Area2D._entered_rock(Rock)
+func _on_Area2D_body_entered(body):
+	if body is Rock:
+		can_press_space= true
+		object_for_space = body
