@@ -106,8 +106,10 @@ func _on_Area2D_body_entered(body):
 		get_parent().add_child(explosion)
 		explosion.play()
 		body.queue_free()
-		self.hp -= 1
+#		self.hp -= 1
+		set_hp(9)
 		print(self.hp)
+#		emit_signal("on_hp_change")
 		
 		$Timer.start()
 			
