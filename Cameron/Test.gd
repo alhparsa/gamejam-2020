@@ -21,6 +21,11 @@ func _process(delta):
 		$Dates.visible = false;
 		pickedUpDates = true
 	
+	# Let player open inventory if they're close enough to camel
+	if ($Player.position - $Path2D/Camel.position).length() < 50:
+		$Inventory.can_open = true
+	else:
+		$Inventory.can_open = false
 
 func hi():
 	print("Simran Style")
