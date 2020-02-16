@@ -61,7 +61,7 @@ func _init() -> void:
 	self.thirst = 100
 	self.hunger = 100
 	self.armor = 30
-	self.speed = 100
+	self.speed = 25
 	
 func _ready():
 	if patrol_path:
@@ -79,7 +79,17 @@ func _physics_process(delta):
 		target = patrol_points[patrol_index]
 
 	velocity = (target - position).normalized() * get_speed()
-	velocity = move_and_slide(velocity)
+	var vect = move_and_slide(velocity)
+	
+#	var collideInfo = move_and_collide(velocity * delta)
+#	if(collideInfo):
+#		print(collideInfo.collider_id)
+#		if(collideInfo.collider_id == 1262):
+#			print("Player loses")
 
 func _process(delta):
-	pass
+	z_index = (get_parent().get_parent().find_node("TileMap").world_to_map(global_position)).y
+
+
+func _on_Area2D_body_entered(body):
+	print(body.name)
