@@ -231,7 +231,6 @@ visible = false
 position = Vector2( -1.35494, -19.0398 )
 scale = Vector2( 0.619821, 0.619821 )
 frames = SubResource( 9 )
-frame = 2
 playing = true
 
 [node name="HitStun" type="Timer" parent="."]
@@ -327,7 +326,7 @@ position = Vector2( -0.862049, -25.6144 )
 position = Vector2( 17.5382, -19.4953 )
 
 [node name="ShootSpeed" type="Timer" parent="."]
-wait_time = 0.01
+wait_time = 0.1
 one_shot = true
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

@@ -31,7 +31,7 @@ func _physics_process(delta):
 			elif global_position.x > camel.global_position.x + 10:
 				if scale.x < 0: scale.x = abs(scale.x)
 		follow_camel()
-	z_index = (get_parent().find_node("floor").world_to_map(global_position)).y
+	z_index = (get_parent().find_node("TileMap").world_to_map(global_position)).y
 	if camel != null:
 		if $AttackSpeed.is_stopped():
 			$AttackSpeed.start()
@@ -49,8 +49,8 @@ func follow_camel():
 	if camelPosition.get_child_count() == 0:
 		return
 	camelPosition = camelPosition.get_child(0).get_position()
-	inputdir.x = camelPosition[0] - self.get_position()[0]
-	inputdir.y = camelPosition[1] - self.get_position()[1]
+	inputdir.x = abs(camelPosition[0] - self.get_position()[0])
+	inputdir.y = abs(camelPosition[1] - self.get_position()[1])
 	inputdir = inputdir.clamped(1)
 	velocity = inputdir*speed
 	var collideInfo = move_and_slide(velocity*(speed_bonus + 1))

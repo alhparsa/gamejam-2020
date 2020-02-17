@@ -23,13 +23,15 @@ export(int) var start_i : int = 0
 var pv = Vector2.DOWN
 var can_press_space = false
 var object_for_space
-var pickedUpPickaxe
+var pickedUpPickaxe = true
 
 var gun_imgs = []
 func _ready():
+	
 	for f in ["botRight", "down", "right", "up", "upRight"]:
 		gun_imgs.append(load("res://assets/items/gun/%s.png"%f))
 	inv = get_parent().find_node("Inventory")
+	inv.add_item("Pickaxe")
 	connect("on_gold_changed", $CanvasLayer/Label3, "set_text")
 	self.gold = 7
 
@@ -38,7 +40,6 @@ func _process(delta):
 		shoot()
 	if not $HitStun.is_stopped():
 		return
-	
 	if can_press_space and "Pickaxe" in inv.items:
 		$CanvasLayer/PressSpace.visible = true
 		$CanvasLayer/PressSpace.set_action("Mine Rock")
@@ -52,7 +53,7 @@ func _process(delta):
 	else:
 		$CanvasLayer/PressSpace.visible = false
 
-	z_index = (get_parent().find_node("floor").world_to_map(global_position)).y
+	z_index = (get_parent().find_node("TileMap").world_to_map(global_position)).y
 	inputdir.x = -Input.get_action_strength("left") + Input.get_action_strength("right")
 	inputdir.y = +Input.get_action_strength("down") - Input.get_action_strength("up")
 	
@@ -121,6 +122,7 @@ func shoot():
 
 func _on_Area2D_body_entered(body):
 	if body is Rock:
+		print("OK")
 		can_press_space = true
 		object_for_space = body
 

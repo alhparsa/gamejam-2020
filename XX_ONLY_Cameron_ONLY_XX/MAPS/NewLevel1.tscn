@@ -1,20 +1,43 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/MAPS/BaseMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://dfsgfds.tscn" type="PackedScene" id=2]
+[ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/ENEMY/ExplodingSimran.tscn" type="PackedScene" id=3]
+[ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/ENEMY/Simran.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Cameron/Test.gd" type="Script" id=5]
+[ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/FEATURES/Level1_Marketplace.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -8.58472, 1.15259, 0, 0, 0, 0, -383.393, -189.844, 0, 0, 0, 0, -320.143, -223.866, 0, 0, 0, 0, -504.853, -324.574, 0, 0, 0, 0, -455.559, -356.263, 0, 0, 0, 0, -506.173, -389.713, 0, 0, 0, 0, -126.528, -575.48, 0, 0, 0, 0, 64.4685, -478.485, 0, 0, 0, 0, 160.266, -531.174, 0, 0, 0, 0, 286.593, -461.099, 0, 0, 0, 0, 223.418, -426.804, 0, 0, 0, 0, 447.688, -318.403, 0, 0, 0, 0, 580.004, -384.561 )
+}
 
 [node name="BaseMap" instance=ExtResource( 1 )]
+script = ExtResource( 5 )
 
 [node name="Path2D" parent="." index="3"]
 position = Vector2( 1232.89, 1460.24 )
+curve = SubResource( 1 )
 
 [node name="Camel" parent="Path2D" index="0"]
 patrol_path = NodePath("..")
 
-[node name="Player" parent="." index="6"]
+[node name="ExplodingSimran" parent="." index="6" instance=ExtResource( 3 )]
+position = Vector2( 1293.74, 1399.55 )
+
+[node name="Player" parent="." index="7"]
 position = Vector2( 1302.6, 1453.97 )
 
-[node name="Node2D" parent="." index="8" instance=ExtResource( 2 )]
+[node name="Marketplace" parent="Player" index="12" instance=ExtResource( 6 )]
+position = Vector2( 62.2997, -98.676 )
+
+[node name="Marketplace2" parent="Player" index="13" instance=ExtResource( 6 )]
+position = Vector2( 177.282, -198.188 )
+
+[node name="Node2D" parent="." index="9" instance=ExtResource( 2 )]
 position = Vector2( 1358.99, 1253.78 )
+
+[node name="Simran" parent="." index="10" instance=ExtResource( 4 )]
+position = Vector2( 1073.14, 1404.26 )
 
 [editable path="Node2D"]
