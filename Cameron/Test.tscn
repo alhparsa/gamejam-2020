@@ -15,7 +15,7 @@
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/FEATURES/Level1_Marketplace.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Audio/level_music.wav" type="AudioStream" id=14]
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 390.844, 188.748, 0, 0, 0, 0, 45.8657, 10.9517, 0, 0, 0, 0, 106.9, -22.2193, 0, 0, 0, 0, -82.0217, -119.458, 0, 0, 0, 0, -26.3895, -152.702, 0, 0, 0, 0, -93.1215, -187.657, 0, 0, 0, 0, 293.123, -372.708, 0, 0, 0, 0, 484.24, -275.443, 0, 0, 0, 0, 579.798, -322.085, 0, 0, 0, 0, 709.475, -258.042, 0, 0, 0, 0, 648.028, -225.368, 0, 0, 0, 0, 872.303, -109.318, 0, 0, 0, 0, 1000.91, -177.051 )
 }
@@ -50,7 +50,7 @@ tile_data = PoolIntArray( -5439491, 0, 0, -5439490, 0, 0, -5439489, 0, 0, -55050
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( 400.331, -296.458 )
-curve = SubResource( 3 )
+curve = SubResource( 1 )
 
 [node name="Camel" parent="Path2D" instance=ExtResource( 6 )]
 position = Vector2( 403.23, 194.957 )
@@ -76,22 +76,28 @@ position = Vector2( 961.951, -530.237 )
 
 [node name="GunSimran" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1508.03, -498.542 )
+scale = Vector2( 0.3, 0.3 )
 
 [node name="GunSimran2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1542.24, -487.953 )
+scale = Vector2( 0.3, 0.3 )
 
 [node name="GunSimran3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1595.18, -456.188 )
+scale = Vector2( 0.3, 0.3 )
 
 [node name="GunSimran4" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1556.9, -474.921 )
+scale = Vector2( 0.3, 0.3 )
 
 [node name="GunSimran5" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1432.28, -531.122 )
+scale = Vector2( 0.3, 0.3 )
 
 [node name="GunSimran6" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1404.58, -542.525 )
 rotation = 2.4722
+scale = Vector2( 0.3, 0.3 )
 
 [node name="ExplodingSimran" parent="." instance=ExtResource( 11 )]
 position = Vector2( 636.456, -356.181 )

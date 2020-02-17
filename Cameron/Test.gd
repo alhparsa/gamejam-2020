@@ -18,7 +18,7 @@ func create_items():
 		location = $TileMap.map_to_world(Vector2(randi()%13+11,randi()%17-12))
 		if chance >= 0.1:
 			items_picked_up[location] = {"pickedUp": false,"loc": location, "item_name": item.itemName, 'item_texture': item.image, "scale": item.map_scale}
-	display_items()
+#	display_items()
 
 func display_items():
 	for item in items_picked_up.values():

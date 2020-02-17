@@ -108,6 +108,7 @@ func _physics_process(delta):
 
 func _process(delta):
 	z_index = (get_parent().get_parent().find_node("TileMap").world_to_map(global_position)).y
+#	print(get_parent().get_child(0).global_position)
 
 	
 

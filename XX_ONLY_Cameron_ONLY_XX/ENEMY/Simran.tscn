@@ -5,7 +5,7 @@
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/ENEMY/Simran.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 19.4872
+radius = 40.9952
 
 [sub_resource type="Animation" id=2]
 resource_name = "attack"
@@ -66,13 +66,13 @@ texture = ExtResource( 2 )
 hframes = 6
 
 [node name="CollisionShape2D" parent="." index="2"]
-position = Vector2( -9.87631, 22.8177 )
+position = Vector2( -5.00313, 5.76157 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" parent="." index="3"]
 anims/attack = SubResource( 2 )
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
-position = Vector2( -7.13619, 5.15291 )
+position = Vector2( -5.67423, 1.25437 )
 rotation = 1.37555
 shape = SubResource( 3 )

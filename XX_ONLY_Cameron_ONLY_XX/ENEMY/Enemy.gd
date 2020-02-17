@@ -48,9 +48,11 @@ func follow_camel():
 	var camelPosition = get_parent().get_node("Path2D")
 	if camelPosition.get_child_count() == 0:
 		return
-	camelPosition = camelPosition.get_child(0).get_position()
-	inputdir.x = abs(camelPosition[0] - self.get_position()[0])
-	inputdir.y = abs(camelPosition[1] - self.get_position()[1])
+		
+#	print(camelPosition.get_child(0).global_position)
+	camelPosition = camelPosition.get_child(0).global_position
+	inputdir.x = camelPosition[0] - self.global_position.x
+	inputdir.y = camelPosition[1] - self.global_position.y
 	inputdir = inputdir.clamped(1)
 	velocity = inputdir*speed
 	var collideInfo = move_and_slide(velocity*(speed_bonus + 1))
