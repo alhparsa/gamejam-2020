@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Cameron/Test.gd" type="Script" id=1]
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Inventory/Inventory.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Rock.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Camel.tscn" type="PackedScene" id=6]
-[ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/FEATURES/Level1_Marketplace.tscn" type="PackedScene" id=7]
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/ENEMY/RangedSimran.tscn" type="PackedScene" id=8]
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/STATUS_BAR/FullStatusBar.tscn" type="PackedScene" id=9]
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/ENEMY/GunSimran.tscn" type="PackedScene" id=10]

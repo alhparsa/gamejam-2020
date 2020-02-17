@@ -3,8 +3,8 @@
 [ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/STATUS_BAR/CamelStats.gd" type="Script" id=1]
 [ext_resource path="res://assets/Camel/camel-sheet-blurred.png" type="Texture" id=2]
 
-[sub_resource type="CapsuleShape2D" id=10]
-radius = 11.5874
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 16.3667
 height = 4.68988
 
 [sub_resource type="Animation" id=2]
@@ -76,17 +76,17 @@ position = Vector2( -0.214645, -8.15624 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.34575, 0.275196 )
+position = Vector2( 0.790183, -7.69895 )
 z_as_relative = false
-shape = SubResource( 10 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.858551, -5.36595 )
+position = Vector2( -2.98613, -5.79315 )
 scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 4
-frame = 2
+frame = 15
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
