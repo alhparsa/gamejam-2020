@@ -76,28 +76,22 @@ position = Vector2( 961.951, -530.237 )
 
 [node name="GunSimran" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1508.03, -498.542 )
-scale = Vector2( 0.3, 0.3 )
 
 [node name="GunSimran2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1542.24, -487.953 )
-scale = Vector2( 0.3, 0.3 )
 
 [node name="GunSimran3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1595.18, -456.188 )
-scale = Vector2( 0.3, 0.3 )
 
 [node name="GunSimran4" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1556.9, -474.921 )
-scale = Vector2( 0.3, 0.3 )
 
 [node name="GunSimran5" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1432.28, -531.122 )
-scale = Vector2( 0.3, 0.3 )
 
 [node name="GunSimran6" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1404.58, -542.525 )
 rotation = 2.4722
-scale = Vector2( 0.3, 0.3 )
 
 [node name="ExplodingSimran" parent="." instance=ExtResource( 11 )]
 position = Vector2( 636.456, -356.181 )

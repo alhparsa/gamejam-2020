@@ -231,6 +231,7 @@ visible = false
 position = Vector2( -1.35494, -19.0398 )
 scale = Vector2( 0.619821, 0.619821 )
 frames = SubResource( 9 )
+frame = 2
 playing = true
 
 [node name="HitStun" type="Timer" parent="."]
@@ -256,7 +257,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 11 )
-text = "SPACE"
+text = "A"
 align = 1
 valign = 1
 __meta__ = {
