@@ -4,7 +4,7 @@ class_name CamelStats
 
 var isTouchingSimran = false
 var bounceSpeed = 200
-const MAX_STAT = 100
+const MAX_STAT = 175
 
 var hp : float setget set_hp, get_hp
 var thirst : float setget set_thirst, get_thirst
@@ -31,6 +31,7 @@ func set_hp(val : float) -> void:
 	if hp <= 0:
 		on_death()
 		queue_free()
+		get_tree().change_scene("res://GAMEOVER.tscn")
 	emit_signal("on_hp_change", hp)
 
 func get_hp() -> float:
@@ -66,7 +67,7 @@ func get_speed() -> float:
 
 
 func _init() -> void:
-	self.hp = 100
+	self.hp = 150
 	self.thirst = 100
 	self.hunger = 100
 	self.armor = 2

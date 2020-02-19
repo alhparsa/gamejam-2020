@@ -12,7 +12,7 @@ func _ready():
 	for sig in signals.keys():
 		var c = get_child(i)
 		c.find_node("Count").find_node("Background").find_node("Label").text = signals[sig]
-		c.find_node("Gauge").max_value = 100
-		c.find_node("Gauge").value = camel_stats.hp
+		c.find_node("Gauge").max_value = camel_stats.MAX_STAT
+		c.find_node("Gauge").value = camel_stats.MAX_STAT
 		camel_stats.connect(sig, c.find_node("Gauge"), "set_value")
 		i += 1

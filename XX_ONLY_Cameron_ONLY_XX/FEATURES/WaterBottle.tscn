@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/FEATURES/Projectile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/items/Water Bottle.png" type="Texture" id=2]
+[ext_resource path="res://XX_ONLY_Cameron_ONLY_XX/FEATURES/WaterBottle.gd" type="Script" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 4.03152
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 1.00115
+
+[node name="WaterBottle" instance=ExtResource( 1 )]
+rotation = 1.56005
+scale = Vector2( 2, 2 )
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D2" parent="Sprite/Hitbox" index="0"]
+position = Vector2( 0.507055, 0 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0.214702, 0.132124 )
+shape = SubResource( 2 )

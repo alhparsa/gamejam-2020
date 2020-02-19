@@ -3,7 +3,8 @@ extends Simran
 var sword = load("res://XX_ONLY_Cameron_ONLY_XX/FEATURES/Projectile_SimranSword.tscn")
 
 func _ready():
-	attack = 23
+	health = 10
+	attack = 10
 	speed = 12
 	$AttackSpeed.wait_time = 6
 
